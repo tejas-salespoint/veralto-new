@@ -12,3 +12,18 @@ export const SuggestedQuestions = [
         'question': "How are contributions credited to a Participant's Account in the Program?"
     },
 ]
+
+export const HachChatbotSuggestedQuestions = [
+    {
+        'id': 1,
+        'question': "What communication protocol does the Water Distribution Monitoring Panel use?"
+    },
+    {
+        'id': 2,
+        'question': "What are the dimensions of the Water Distribution Monitoring Panel?"
+    },
+    {
+        'id': 3,
+        'question': "What instruments are included in the package?"
+    },
+]

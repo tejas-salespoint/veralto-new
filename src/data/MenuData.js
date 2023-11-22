@@ -3,6 +3,8 @@ import SmartToyRoundedIcon from '@mui/icons-material/SmartToyRounded';
 import PowerBiIcon from '@mui/icons-material/BarChart';
 import VideoIcon from '@mui/icons-material/VideoLibrary';
 import TestIcon from '@mui/icons-material/Extension';
+import Home from '/src/assets/icons/home.svg'
+import { HomeOutlined, MarkChatUnreadOutlined, TextsmsOutlined } from '@mui/icons-material';
 
 
 
@@ -12,13 +14,19 @@ export const MenuListing = [
         id: 1,
         path: '/',
         name: 'Landing Screen',
-        icon: HomeIcon,
+        icon: HomeOutlined,
     },
     {
         id: 2,
         path: '/chatbot',
         name: 'Azure OpenAI Chatbot for Enterprise Data',
-        icon: SmartToyRoundedIcon,
+        icon: MarkChatUnreadOutlined,
+    },
+    {
+        id: 3,
+        path: '/hach_chatbot',
+        name: 'Azure OpenAI Chatbot for Enterprise Data',
+        icon: TextsmsOutlined,
     },
     // {
     //     id: 3,

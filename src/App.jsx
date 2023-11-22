@@ -11,6 +11,7 @@ import CargoGlobalNetworkReport from "./pages/PowerBi/CargoGlobalNetworkReport";
 import FreightForwardingReport from "./pages/PowerBi/FreightForwardingReport";
 import NavigateChip from "./components/NavigateChip";
 import CompetitorAnalysisReport from "./pages/PowerBi/CompetitorAnalysisReport";
+import HachChatbot from "./pages/HachChatbot/HachChatbot";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/hach_chatbot" element={<HachChatbot />} />
           <Route path="/powerbi" element={<PowerBi />} />
           <Route path="/cargo_shipments_report" element={<CargoShipmentsReport />} />
           <Route path="/cargo_global_network_report" element={<CargoGlobalNetworkReport />} />

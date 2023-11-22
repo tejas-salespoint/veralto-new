@@ -3,6 +3,7 @@ import InputField from "./InputField";
 import QuestionCard from "./QuestionCard";
 import ToggleButton from "./ToggleButton";
 import secondaryLogo from "/src/assets/secondary_logo.png";
+import groupLogo from "/src/assets/group_main_icon.png";
 import axios from "axios";
 import { SuggestedQuestions } from "../data/SuggestedQuestion";
 import PdfResponseTab from "./PdfResponseTab";
@@ -17,10 +18,11 @@ import {
 import { openAiData } from "../data/fileData";
 
 const apiUrl = "https://func-openai-search-002.azurewebsites.net/api/chat";
+// https://func-openai-search-002.azurewebsites.net/api/chat
 // const apiUrl =
 //   "https://raw.githubusercontent.com/tejasghlade/json_data_api_test/main/zim_demo_get_api";
 
-const Chatbot = () => {
+const Chatbot = ({ label, title, placeholder, logo, questions }) => {
   const [AiChating, setAiChating] = useState([]);
   const [textFieldValue, setTextFieldValue] = useState("");
   const [pdfUploadActive, setPdfUploadActive] = useState(false);
@@ -78,16 +80,30 @@ const Chatbot = () => {
       ],
       approach: "rrr",
       overrides: {},
-      index: "zim-index",
+      index: "veralto-index",
       industry: "default",
-      container: "zim-container",
+      container: "veralto-container",
       enableExternalDomain: false,
     });
+
+    const required = {
+      history: [
+        {
+          user: textFieldValue,
+        },
+      ],
+      approach: "rrr",
+      overrides: {},
+      index: "veralto-index",
+      industry: "default",
+      container: "veralto-container",
+      enableExternalDomain: false,
+    };
 
     const requestOptions = {
       method: "POST",
       headers: myHeaders,
-      body: raw,
+      body: required,
       // mode: 'no-cors', // Set the mode to 'no-cors'
       redirect: "follow",
     };
@@ -211,9 +227,9 @@ const Chatbot = () => {
         ],
         approach: "rrr",
         overrides: {},
-        index: "zim-index",
+        index: "veralto-index",
         industry: "default",
-        container: "zim-container",
+        container: "veralto-container",
         enableExternalDomain: false,
       });
 
@@ -286,10 +302,14 @@ const Chatbot = () => {
         <div className="flex  justify-center flex-col items-center gap-5 p-5">
           {AiChating.length === 0 && (
             <div className="flex   justify-center flex-col items-center gap-5 ">
-              <img className="h-8 " src={secondaryLogo} alt="secondary logo" />
+              <img
+                className={`${label === "hach-chatbot" ? "h-10" : "h-8"} `}
+                src={logo}
+                alt="secondary logo"
+              />
               <div className=" text-center font-bold  font-magistralBold text-white text-4xl  ">
                 {/* Shipping Companion */}
-                HR Operations
+                {title}
               </div>
               <div className="text-center font-magistral text-white text-2xl  ">
                 Ask me something
@@ -298,8 +318,8 @@ const Chatbot = () => {
               {/* todo :: suggesting qustions  */}
 
               {!pdfUploadActive && AiChating.length === 0 && (
-                <div className="flex gap-4">
-                  {SuggestedQuestions.map((ques) => (
+                <div className="flex gap-2 flex-wrap justify-center items-center">
+                  {questions.map((ques) => (
                     <QuestionCard
                       key={ques.id}
                       question={ques.question}
@@ -332,7 +352,7 @@ const Chatbot = () => {
                     fontSize="small"
                   />
                 </div>
-                <div className=" text-black p-3 text-md font-bold font-magistral  ">
+                <div className=" text-black p-3 text-md font-normal font-magistral  ">
                   {chat?.prompt}
                 </div>
               </div>
@@ -351,7 +371,7 @@ const Chatbot = () => {
                   />
                 </div>
 
-                <div className=" text-black p-3 text-md font-bold font-magistral  ">
+                <div className=" text-black p-3 pb-7 text-md font-normal font-magistral  ">
                   {/* <DotLoader /> */}
                   {chat?.response?.answer
                     ? chat?.response?.answer
@@ -365,7 +385,7 @@ const Chatbot = () => {
                     !chat?.response?.answer &&
                     "I'm sorry, but I can't answer the questions which are not related to the document. As an AI language model, I don't have access to information unless you provide it to me. How may I assist you with enterprise documents?"} */}
                 </div>
-                <div className="flex gap-2 px-3 flex-wrap">
+                <div className="flex gap-2 px-3  flex-wrap">
                   <span className="font-bold text-sm">Citations :</span>
 
                   {chat?.pdfFiles?.map((item, index) => (
@@ -375,7 +395,7 @@ const Chatbot = () => {
                         onPdfActiveResponse(chat?.id, 2);
                       }}
                       key={index}
-                      className="bg-purple-200 text-sm font-bold font-magistral   px-3 rounded hover:underline cursor-pointer"
+                      className="bg-fuchsia-200 text-sm font-bold font-magistral text-purple-950  px-3 rounded hover:underline cursor-pointer"
                     >
                       {item}
                     </div>
