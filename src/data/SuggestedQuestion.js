@@ -1,14 +1,14 @@
 export const SuggestedQuestions = [
     {
         'id': 1,
-        'question': "What measures has the company taken to adapt to supply and demand trends in the container shipping industry?"
+        'question': " What is the purpose of the Veralto Corporation & Subsidiaries Excess Contribution Program?"
     },
     {
         'id': 2,
-        'question': "How did ZIM evolve into a global container shipping company?"
+        'question': " What are the distribution options for a Participant's Account upon termination or death?"
     },
     {
         'id': 3,
-        'question': "How does ZIM monitor and optimize fuel consumption, and what actions are taken to reduce energy and fuel usage on its vessels?"
+        'question': "How are contributions credited to a Participant's Account in the Program?"
     },
 ]

@@ -97,7 +97,7 @@ const Chatbot = () => {
 
     // Send a POST request
     await axios
-      .get(apiUrl, requestOptions)
+      .post(apiUrl, requestOptions)
       .then(async (response) => {
         // Handle the response data
         // console.log("Response data:", response.data);
