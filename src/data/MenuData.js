@@ -20,45 +20,45 @@ export const MenuListing = [
         name: 'Azure OpenAI Chatbot for Enterprise Data',
         icon: SmartToyRoundedIcon,
     },
-    {
-        id: 3,
-        path: '/powerbi',
-        name: 'Analytics with Power BI',
-        icon: PowerBiIcon,
-        submenu: [
-            {
-                id: 11,
-                name: "Cargo Shipments Report",
-                path: '/cargo_shipments_report',
-            },
-            {
-                id: 22,
-                name: "Cargo Global Network Report",
-                path: '/cargo_global_network_report',
-            },
-            {
-                id: 33,
-                name: "Freight Forwarding Report",
-                path: '/freight_forwarding_report',
-            },
-            {
-                id: 34,
-                name: "Competitor Analysis Report",
-                path: '/competitor_analysis_report',
-            },
-        ],
+    // {
+    //     id: 3,
+    //     path: '/powerbi',
+    //     name: 'Analytics with Power BI',
+    //     icon: PowerBiIcon,
+    //     submenu: [
+    //         {
+    //             id: 11,
+    //             name: "Cargo Shipments Report",
+    //             path: '/cargo_shipments_report',
+    //         },
+    //         {
+    //             id: 22,
+    //             name: "Cargo Global Network Report",
+    //             path: '/cargo_global_network_report',
+    //         },
+    //         {
+    //             id: 33,
+    //             name: "Freight Forwarding Report",
+    //             path: '/freight_forwarding_report',
+    //         },
+    //         {
+    //             id: 34,
+    //             name: "Competitor Analysis Report",
+    //             path: '/competitor_analysis_report',
+    //         },
+    //     ],
 
-    },
-    {
-        id: 4,
-        path: '/video',
-        name: 'Microsoft Fabric Copilot for Power BI',
-        icon: VideoIcon,
-    },
-    {
-        id: 5,
-        path: '/test',
-        name: 'Test',
-        icon: TestIcon,
-    },
+    // },
+    // {
+    //     id: 4,
+    //     path: '/video',
+    //     name: 'Microsoft Fabric Copilot for Power BI',
+    //     icon: VideoIcon,
+    // },
+    // {
+    //     id: 5,
+    //     path: '/test',
+    //     name: 'Test',
+    //     icon: TestIcon,
+    // },
 ]

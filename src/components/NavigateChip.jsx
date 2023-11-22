@@ -22,32 +22,32 @@ const links = [
     name: "Chatbot",
   },
 
-  {
-    id: 3,
-    name: "Cargo Shipments Report",
-    path: "/cargo_shipments_report",
-  },
-  {
-    id: 4,
-    name: "Cargo Global Network Report",
-    path: "/cargo_global_network_report",
-  },
-  {
-    id: 5,
-    name: "Freight Forwarding Report",
-    path: "/freight_forwarding_report",
-  },
-  {
-    id: 6,
-    name: "Competitor Analysis Report",
-    path: "/competitor_analysis_report",
-  },
+  // {
+  //   id: 3,
+  //   name: "Cargo Shipments Report",
+  //   path: "/cargo_shipments_report",
+  // },
+  // {
+  //   id: 4,
+  //   name: "Cargo Global Network Report",
+  //   path: "/cargo_global_network_report",
+  // },
+  // {
+  //   id: 5,
+  //   name: "Freight Forwarding Report",
+  //   path: "/freight_forwarding_report",
+  // },
+  // {
+  //   id: 6,
+  //   name: "Competitor Analysis Report",
+  //   path: "/competitor_analysis_report",
+  // },
 
-  {
-    id: 7,
-    path: "/video",
-    name: "Video",
-  },
+  // {
+  //   id: 7,
+  //   path: "/video",
+  //   name: "Video",
+  // },
 ];
 
 const NavigateChip = () => {
