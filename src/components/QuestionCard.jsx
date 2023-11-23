@@ -5,12 +5,11 @@ const QuestionCard = ({ question, value, setValue, submitFunction }) => {
     } catch (error) {
       // Handle any errors that may occur during setValue or submitFunction
       console.error("An error occurred:", error);
-    } 
+    }
   }
 
-
   return (
-    <div className="w-80 h-42 bg-neutral-200 rounded-lg cursor-pointer">
+    <div className="w-80 h-42 bg-neutral-200 flex-grow rounded-lg cursor-pointer">
       <button
         type="submit"
         onClick={onClick}

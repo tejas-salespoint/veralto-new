@@ -106,7 +106,11 @@ export default function PdfResponseTab({ activeIds, activePdf, response }) {
           />
         </Tabs>
       </Box>
-      <CustomTabPanel className="!h-[70vh] m-3" value={value} index={0}>
+      <CustomTabPanel
+        className="!h-[70vh] m-3 !w-[95%] "
+        value={value}
+        index={0}
+      >
         {/* {response[0].response?.thoughts.map((data, index) => (
           <div key={index} className="bg-white p-3 m-3 rounded">
             {data}
@@ -128,8 +132,12 @@ export default function PdfResponseTab({ activeIds, activePdf, response }) {
 
         {/* {response[0].response?.thoughts} */}
       </CustomTabPanel>
-      <CustomTabPanel className="!h-[70vh] m-3" value={value} index={1}>
-        <div className="!h-[70vh] overflow-y-scroll">
+      <CustomTabPanel
+        className="!h-[70vh] m-3 !w-[95%]"
+        value={value}
+        index={1}
+      >
+        <div className="!h-[70vh]  overflow-y-scroll overflow-x-scroll">
           {
             // eslint-disable-next-line react/prop-types
             response
@@ -138,7 +146,7 @@ export default function PdfResponseTab({ activeIds, activePdf, response }) {
                 <>
                   {item?.response?.data_points?.map((data, index) => (
                     <div key={index} className="bg-white p-3 rounded mb-3">
-                      <div className="text-lg font-bold ">
+                      <div className="text-lg font-bold !w-[95%]">
                         {data?.split(".pdf:")[0]}
                       </div>
                       {data?.split(".pdf:")[1]}
@@ -161,7 +169,7 @@ export default function PdfResponseTab({ activeIds, activePdf, response }) {
             // typeof="application/pdf"
             className=" rounded  "
             title="Citation"
-            src={`https://func-openai-search-002.azurewebsites.net/api/content/${activePdf}?container=veralto-container`}
+            src={`https://func-openai-search-002.azurewebsites.net/api/content/${activePdf}?container=veralto-container1`}
             width="100%"
             height="810px"
             style={{ marginTop: "12px" }}

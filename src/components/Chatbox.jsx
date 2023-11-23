@@ -16,7 +16,7 @@ import {
   RestartAlt,
 } from "@mui/icons-material";
 import { openAiData } from "../data/fileData";
-
+import chatGlowImage from "/src/assets/star_design.png";
 const apiUrl = "https://func-openai-search-002.azurewebsites.net/api/chat";
 // https://func-openai-search-002.azurewebsites.net/api/chat
 // const apiUrl =
@@ -39,16 +39,18 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
 
     // todo :: extract pdf files
     function extractPDFFilesFromDataPoints(data) {
-      const pdfNames = data.map(item => {
-        const colonIndex = item.indexOf(':');
-        if (colonIndex !== -1) {
-          const nameWithoutSpaces = item.substring(0, colonIndex).trim();
-          const urlEncodedName = nameWithoutSpaces.replace(/ /g, '%20');
-          return urlEncodedName;
-        }
-        return null;
-      }).filter(Boolean);
-    
+      const pdfNames = data
+        .map((item) => {
+          const colonIndex = item.indexOf(":");
+          if (colonIndex !== -1) {
+            const nameWithoutSpaces = item.substring(0, colonIndex).trim();
+            const urlEncodedName = nameWithoutSpaces.replace(/ /g, "%20");
+            return urlEncodedName;
+          }
+          return null;
+        })
+        .filter(Boolean);
+
       return pdfNames;
     }
 
@@ -199,14 +201,16 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
 
   // todo :: extract pdf files
   function extractPDFFilesFromDataPoints(dataPoints) {
-    const pdfNames = dataPoints.map(item => {
-      const colonIndex = item.indexOf(':');
-      if (colonIndex !== -1) {
-        return item.substring(0, colonIndex).trim();
-      }
-      return null;
-    }).filter(Boolean);
-  
+    const pdfNames = dataPoints
+      .map((item) => {
+        const colonIndex = item.indexOf(":");
+        if (colonIndex !== -1) {
+          return item.substring(0, colonIndex).trim();
+        }
+        return null;
+      })
+      .filter(Boolean);
+
     return pdfNames;
   }
   const handleClick = async () => {
@@ -224,9 +228,9 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
         ],
         approach: "rrr",
         overrides: {},
-        index: "veralto-index",
+        index: "veralto-index1",
         industry: "default",
-        container: "veralto-container",
+        container: "veralto-container1",
         enableExternalDomain: false,
       });
 
@@ -315,7 +319,7 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
               {/* todo :: suggesting qustions  */}
 
               {!pdfUploadActive && AiChating.length === 0 && (
-                <div className="flex gap-2 flex-wrap justify-center items-center">
+                <div className="flex gap-2 flex-wrap justify-center flex-grow  items-center">
                   {questions.map((ques) => (
                     <QuestionCard
                       key={ques.id}
@@ -355,17 +359,24 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
               </div>
               <div className="bg-neutral-200 w-[95%] rounded-lg self-start p-3">
                 {/* Generating answer */}
-                <div className="flex justify-end gap-2 ">
-                  <LightbulbOutlined
-                    onClick={() => onPdfActiveResponse(chat?.id, 0)}
-                    className="cursor-pointer "
-                    fontSize="small"
+                <div className="flex justify-between gap-2">
+                  <img
+                    src={chatGlowImage}
+                    className="h-8 w-8"
+                    alt="chatGlowImage"
                   />
-                  <DocumentScannerOutlined
-                    onClick={() => onPdfActiveResponse(chat?.id, 1)}
-                    className="cursor-pointer"
-                    fontSize="small"
-                  />
+                  <div className="flex gap-2">
+                    <LightbulbOutlined
+                      onClick={() => onPdfActiveResponse(chat?.id, 0)}
+                      className="cursor-pointer "
+                      fontSize="small"
+                    />
+                    <DocumentScannerOutlined
+                      onClick={() => onPdfActiveResponse(chat?.id, 1)}
+                      className="cursor-pointer"
+                      fontSize="small"
+                    />
+                  </div>
                 </div>
 
                 <div className=" text-black p-3 pb-7 text-md font-normal font-magistral  ">
@@ -452,7 +463,7 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
       {pdfResponseActive && (
         <div
           ref={secondElementRef}
-          className="!w-[30%]     bg-opacity-80 bg-slate-900 rounded-2xl shadow border-[2px]  border-white "
+          className="!w-[25%]     bg-opacity-80 bg-slate-900 rounded-2xl shadow border-[2px]  border-white "
         >
           <PdfResponseTab
             activeIds={PdfResponseTabActiveId}

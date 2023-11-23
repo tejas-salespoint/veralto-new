@@ -24,6 +24,6 @@ export const HachChatbotSuggestedQuestions = [
     },
     {
         'id': 3,
-        'question': "What instruments are included in the package?"
+        'question': " What are the specifications for the on-line turbidimeter sensor included in the panel?"
     },
 ]
