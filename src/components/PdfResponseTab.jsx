@@ -4,6 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import PdfViewer from "./PdfViewer";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,6 +41,22 @@ function a11yProps(index) {
 
 export default function PdfResponseTab({ activeIds, activePdf, response }) {
   // todo :: practice
+
+  const [pdfUrl, setPdfUrl] = React.useState(null);
+  const apiUrl = `https://func-openai-search-002.azurewebsites.net/api/content/${activePdf}?container=veralto-container`;
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.blob();
+        setPdfUrl(URL.createObjectURL(data));
+      } catch (error) {
+        console.error("Error fetching PDF:", error);
+      }
+    };
+
+    fetchData();
+  }, [apiUrl]);
 
   console.log(activeIds);
   console.log(response);
@@ -141,13 +158,28 @@ export default function PdfResponseTab({ activeIds, activePdf, response }) {
         {/* <span>{activePdf}</span> */}
         <div className="!h-[70vh] overflow-y-scroll">
           <iframe
+            // typeof="application/pdf"
             className=" rounded  "
             title="Citation"
-            src={` https://func-openai-search-002.azurewebsites.net/api/content/${activePdf}?container=veralto-container`}
+            src={`https://func-openai-search-002.azurewebsites.net/api/content/${activePdf}?container=veralto-container`}
             width="100%"
             height="810px"
             style={{ marginTop: "12px" }}
           />
+
+          {/* <PdfViewer
+            pdfUrl={
+              "https://func-openai-search-002.azurewebsites.net/api/content/Water%20Distribution%20Monitoring%20Panel,%206%20Sensors,%20TU5300sc%20without%20ACM,%20CL17sc%20_%20Hach-2.pdf?container=veralto-container"
+            }
+          /> */}
+
+          {/* <embed
+            id="fgh"
+            src={pdfUrl}
+            type="application/pdf"
+            width="400"
+            height="400"
+          /> */}
         </div>
       </CustomTabPanel>
     </Box>

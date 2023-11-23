@@ -22,16 +22,16 @@ const links = [
     name: "Chatbot",
   },
 
-  // {
-  //   id: 3,
-  //   name: "Cargo Shipments Report",
-  //   path: "/cargo_shipments_report",
-  // },
-  // {
-  //   id: 4,
-  //   name: "Cargo Global Network Report",
-  //   path: "/cargo_global_network_report",
-  // },
+  {
+    id: 3,
+    name: "Azure OpenAI Hach Chatbot for Enterprise Data",
+    path: "/hach_chatbot",
+  },
+  {
+    id: 4,
+    name: "Competitor Analysis Report",
+    path: "/powerbi",
+  },
   // {
   //   id: 5,
   //   name: "Freight Forwarding Report",

@@ -38,23 +38,18 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
     // simulateLoading();
 
     // todo :: extract pdf files
-    function extractPDFFilesFromDataPoints(dataPoints) {
-      const pdfFiles = [];
-      const regex = /[^ ]+\.pdf/g; // Updated regex to match PDF file names even with spaces
-
-      dataPoints?.forEach((dataPoint) => {
-        const matches = dataPoint.match(regex);
-
-        if (matches) {
-          // Replace spaces with %20 in each match
-          const formattedMatches = matches.map((match) =>
-            match.replace(/ /g, "%20")
-          );
-          pdfFiles.push(...formattedMatches);
+    function extractPDFFilesFromDataPoints(data) {
+      const pdfNames = data.map(item => {
+        const colonIndex = item.indexOf(':');
+        if (colonIndex !== -1) {
+          const nameWithoutSpaces = item.substring(0, colonIndex).trim();
+          const urlEncodedName = nameWithoutSpaces.replace(/ /g, '%20');
+          return urlEncodedName;
         }
-      });
-
-      return pdfFiles;
+        return null;
+      }).filter(Boolean);
+    
+      return pdfNames;
     }
 
     if (textFieldValue.trim() === "") {
@@ -204,22 +199,15 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
 
   // todo :: extract pdf files
   function extractPDFFilesFromDataPoints(dataPoints) {
-    const pdfFiles = [];
-    const regex = /[^ ]+\.pdf/g; // Updated regex to match PDF file names even with spaces
-
-    dataPoints?.forEach((dataPoint) => {
-      const matches = dataPoint.match(regex);
-
-      if (matches) {
-        // Replace spaces with %20 in each match
-        const formattedMatches = matches.map((match) =>
-          match.replace(/ /g, "%20")
-        );
-        pdfFiles.push(...formattedMatches);
+    const pdfNames = dataPoints.map(item => {
+      const colonIndex = item.indexOf(':');
+      if (colonIndex !== -1) {
+        return item.substring(0, colonIndex).trim();
       }
-    });
-
-    return pdfFiles;
+      return null;
+    }).filter(Boolean);
+  
+    return pdfNames;
   }
   const handleClick = async () => {
     try {

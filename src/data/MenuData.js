@@ -25,13 +25,13 @@ export const MenuListing = [
     {
         id: 3,
         path: '/hach_chatbot',
-        name: 'Azure OpenAI Chatbot for Enterprise Data',
+        name: 'Azure OpenAI Hach Chatbot for Enterprise Data',
         icon: TextsmsOutlined,
     },
     {
         id: 4,
         path: '/powerbi',
-        name: 'Azure OpenAI Chatbot for Enterprise Data',
+        name: 'Competitor Analysis Report',
         icon: PowerBiIcon,
     },
     // {

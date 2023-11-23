@@ -6,7 +6,7 @@ import groupLogo from "/src/assets/group_main_icon.png";
 
 const HachChatbot = () => {
   return (
-    <Layout>
+    <Layout bgimg={"bg-bg_hachchatbot"} >
     <TransparentTopBar text={" Azure OpenAi + Congnitive Search "} />
     <div className="flex justify-center  items-center my-10">
       <Chatbot label={'hach_chatbot'} logo={groupLogo} questions={HachChatbotSuggestedQuestions} title={'HACH Operations'} placeholder={""}  />

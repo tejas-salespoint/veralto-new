@@ -1,4 +1,3 @@
-
 import Chatbot from "../../components/Chatbox";
 import Layout from "../../components/Layout";
 import secondaryLogo from "/src/assets/secondary_logo.png";
@@ -7,12 +6,17 @@ import { SuggestedQuestions } from "../../data/SuggestedQuestion";
 
 const ChatBot = () => {
   return (
-    <Layout>
+    <Layout bgimg={"bg-bg_chatbot"}>
       <TransparentTopBar text={" Azure OpenAi + Congnitive Search "} />
       <div className="flex justify-center  items-center my-10">
-        <Chatbot label={'hach_chatbot'} logo={secondaryLogo} questions={SuggestedQuestions} title={'HR Operations'} placeholder={""}  />
+        <Chatbot
+          label={"hach_chatbot"}
+          logo={secondaryLogo}
+          questions={SuggestedQuestions}
+          title={"HR Operations"}
+          placeholder={""}
+        />
       </div>
-   
     </Layout>
   );
 };
