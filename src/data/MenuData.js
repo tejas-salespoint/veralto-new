@@ -28,6 +28,12 @@ export const MenuListing = [
         name: 'Azure OpenAI Chatbot for Enterprise Data',
         icon: TextsmsOutlined,
     },
+    {
+        id: 4,
+        path: '/powerbi',
+        name: 'Azure OpenAI Chatbot for Enterprise Data',
+        icon: PowerBiIcon,
+    },
     // {
     //     id: 3,
     //     path: '/powerbi',
@@ -55,8 +61,8 @@ export const MenuListing = [
     //             path: '/competitor_analysis_report',
     //         },
     //     ],
-
     // },
+    
     // {
     //     id: 4,
     //     path: '/video',
