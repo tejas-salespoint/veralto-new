@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import InputField from "./InputField";
 import QuestionCard from "./QuestionCard";
 import ToggleButton from "./ToggleButton";
-import secondaryLogo from "/src/assets/secondary_logo.png";
-import groupLogo from "/src/assets/group_main_icon.png";
+// import secondaryLogo from "/src/assets/secondary_logo.png";
+// import groupLogo from "/src/assets/group_main_icon.png";
 import axios from "axios";
-import { SuggestedQuestions } from "../data/SuggestedQuestion";
+// import { SuggestedQuestions } from "../data/SuggestedQuestion";
 import PdfResponseTab from "./PdfResponseTab";
 import FileUploader from "./FileUploader";
 import {
@@ -46,7 +46,11 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
         const matches = dataPoint.match(regex);
 
         if (matches) {
-          pdfFiles.push(...matches);
+          // Replace spaces with %20 in each match
+          const formattedMatches = matches.map((match) =>
+            match.replace(/ /g, "%20")
+          );
+          pdfFiles.push(...formattedMatches);
         }
       });
 
@@ -200,17 +204,22 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
 
   // todo :: extract pdf files
   function extractPDFFilesFromDataPoints(dataPoints) {
-    const pdfNames = dataPoints
-      .map((item) => {
-        const colonIndex = item.indexOf(":");
-        if (colonIndex !== -1) {
-          return item.substring(0, colonIndex).trim();
-        }
-        return null;
-      })
-      .filter(Boolean);
+    const pdfFiles = [];
+    const regex = /[^ ]+\.pdf/g; // Updated regex to match PDF file names even with spaces
 
-    return pdfNames;
+    dataPoints?.forEach((dataPoint) => {
+      const matches = dataPoint.match(regex);
+
+      if (matches) {
+        // Replace spaces with %20 in each match
+        const formattedMatches = matches.map((match) =>
+          match.replace(/ /g, "%20")
+        );
+        pdfFiles.push(...formattedMatches);
+      }
+    });
+
+    return pdfFiles;
   }
   const handleClick = async () => {
     try {
