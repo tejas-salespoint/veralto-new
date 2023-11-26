@@ -23,6 +23,7 @@ function App() {
         <Topbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          
           <Route path="/chatbot" element={<ChatBot />} />
           <Route path="/hach_chatbot" element={<HachChatbot />} />
           <Route path="/powerbi" element={<PowerBiVeralto />} />
