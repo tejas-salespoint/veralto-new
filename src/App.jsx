@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Topbar from "./components/Topbar";
 import Sidebar from "./components/Sidebar";
@@ -17,27 +17,40 @@ import PowerBiVeralto from "./pages/PowerBiVeralto/PowerBiVeralto";
 function App() {
   return (
     <BrowserRouter>
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <Topbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          
-          <Route path="/chatbot" element={<ChatBot />} />
-          <Route path="/hach_chatbot" element={<HachChatbot />} />
-          <Route path="/powerbi" element={<PowerBiVeralto />} />
-          <Route path="/cargo_shipments_report" element={<CargoShipmentsReport />} />
-          <Route path="/cargo_global_network_report" element={<CargoGlobalNetworkReport />} />
-          <Route path="/freight_forwarding_report" element={<FreightForwardingReport />} />
-          <Route path="/competitor_analysis_report" element={<CompetitorAnalysisReport />} />
-          <Route path="/video" element={<DemoVideo />} />
-          <Route path="/test" element={<Test />} />
-        </Routes>
+      <div className="flex">
+        <Sidebar />
+        <div className="flex-1 flex flex-col">
+          <Topbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+
+            <Route path="/chatbot" element={<ChatBot />} />
+            <Route path="/hach_chatbot" element={<HachChatbot />} />
+            <Route path="/powerbi" element={<PowerBiVeralto />} />
+            <Route
+              path="/cargo_shipments_report"
+              element={<CargoShipmentsReport />}
+            />
+            <Route
+              path="/cargo_global_network_report"
+              element={<CargoGlobalNetworkReport />}
+            />
+            <Route
+              path="/freight_forwarding_report"
+              element={<FreightForwardingReport />}
+            />
+            <Route
+              path="/competitor_analysis_report"
+              element={<CompetitorAnalysisReport />}
+            />
+            <Route path="/video" element={<DemoVideo />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+        <NavigateChip />
       </div>
-      <NavigateChip />
-    </div>
-  </BrowserRouter>
+    </BrowserRouter>
   );
 }
 
