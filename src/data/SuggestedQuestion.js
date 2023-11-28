@@ -1,7 +1,7 @@
 export const SuggestedQuestions = [
     {
         'id': 1,
-        'question': "What happens with Dividends?"
+        'question': "What happens with dividends according to Veralto's contribution program?"
     },
     {
         'id': 2,
