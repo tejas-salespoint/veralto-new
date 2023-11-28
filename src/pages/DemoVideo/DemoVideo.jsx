@@ -16,7 +16,7 @@ const DemoVideo = () => {
     fluid: true,
     sources: [
       {
-        src: "https://daiindustry.blob.core.windows.net/daistrapi/v2_with audio final (1).mp4",
+        src: "https://daiindustry.blob.core.windows.net/daistrapi/v2_final 1.mp4",
         type: "video/mp4",
       },
     ],

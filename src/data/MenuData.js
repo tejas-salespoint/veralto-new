@@ -28,12 +28,12 @@ export const MenuListing = [
         name: 'Azure OpenAI Hach Chatbot for Enterprise Data',
         icon: TextsmsOutlined,
     },
-    {
-        id: 4,
-        path: '/powerbi',
-        name: 'Competitor Analysis Report',
-        icon: PowerBiIcon,
-    },
+    // {
+    //     id: 4,
+    //     path: '/powerbi',
+    //     name: 'Competitor Analysis Report',
+    //     icon: PowerBiIcon,
+    // },
     // {
     //     id: 3,
     //     path: '/powerbi',
@@ -62,13 +62,13 @@ export const MenuListing = [
     //         },
     //     ],
     // },
-    
-    // {
-    //     id: 4,
-    //     path: '/video',
-    //     name: 'Microsoft Fabric Copilot for Power BI',
-    //     icon: VideoIcon,
-    // },
+
+    {
+        id: 4,
+        path: '/video',
+        name: 'Microsoft Fabric Copilot for Power BI',
+        icon: VideoIcon,
+    },
     // {
     //     id: 5,
     //     path: '/test',

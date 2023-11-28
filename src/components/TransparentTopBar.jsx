@@ -5,7 +5,7 @@ const TransparentTopBar = ({ text, link }) => {
   return (
     <div className="h-14  opacity-40 bg-black flex justify-between items-center px-4">
       <div className="text-white text-lg font-magistral  font-bold ">
-        {/* Azure OpenAi + Congnitive Search */}
+        {/* Azure OpenAi + Cognitive Search */}
         {text}
       </div>
       <div className="flex gap-4 justify-center items-center">

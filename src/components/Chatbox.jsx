@@ -319,7 +319,7 @@ const Chatbot = ({ label, title, placeholder, logo, questions }) => {
               {/* todo :: suggesting qustions  */}
 
               {!pdfUploadActive && AiChating.length === 0 && (
-                <div className="flex gap-2 flex-wrap justify-center flex-grow  items-center">
+                <div className="flex gap-2 flex-wrap  justify-center  items-stretch">
                   {questions.map((ques) => (
                     <QuestionCard
                       key={ques.id}

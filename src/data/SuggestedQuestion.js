@@ -1,7 +1,7 @@
 export const SuggestedQuestions = [
     {
         'id': 1,
-        'question': " What is the purpose of the Veralto Corporation & Subsidiaries Excess Contribution Program?"
+        'question': "What happens with Dividends?"
     },
     {
         'id': 2,

@@ -7,7 +7,7 @@ import { SuggestedQuestions } from "../../data/SuggestedQuestion";
 const ChatBot = () => {
   return (
     <Layout bgimg={"bg-bg_chatbot"}>
-      <TransparentTopBar text={" Azure OpenAi + Congnitive Search "} />
+      <TransparentTopBar text={" Azure OpenAi + Cognitive Search "} />
       <div className="flex justify-center  items-center my-10">
         <Chatbot
           label={"hach_chatbot"}
