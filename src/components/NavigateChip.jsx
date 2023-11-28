@@ -27,11 +27,11 @@ const links = [
     name: "Azure OpenAI Hach Chatbot for Enterprise Data",
     path: "/hach_chatbot",
   },
-  {
-    id: 4,
-    name: "Competitor Analysis Report",
-    path: "/powerbi",
-  },
+  // {
+  //   id: 4,
+  //   name: "Competitor Analysis Report",
+  //   path: "/powerbi",
+  // },
   // {
   //   id: 5,
   //   name: "Freight Forwarding Report",
@@ -43,11 +43,11 @@ const links = [
   //   path: "/competitor_analysis_report",
   // },
 
-  // {
-  //   id: 7,
-  //   path: "/video",
-  //   name: "Video",
-  // },
+  {
+    id: 4,
+    path: "/video",
+    name: "Video",
+  },
 ];
 
 const NavigateChip = () => {
