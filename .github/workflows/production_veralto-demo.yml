@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - veralto-demo
+name: Build and deploy Node.js app to Azure Web App - veralto
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: release.zip
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -42,21 +42,21 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: node-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
+      # - name: Unzip artifact for deployment
+      #   run: unzip release.zip
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'veralto-demo'
+          app-name: 'veralto'
           slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E470271E3B3543C8B0AA3E3410CD9F82 }}
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_322D23DA44DF4D2D8FB0DAC32842095D }}
